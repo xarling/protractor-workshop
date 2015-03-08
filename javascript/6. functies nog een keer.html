@@ -1,0 +1,62 @@
+<html>
+
+
+<head>
+
+    <script>
+
+        function assertTrue(value) {
+            if (!value) {
+                throw new Error('De waarde was niet waar true');
+            }
+        }
+
+        function describe(naam, fn) {
+            console.log(naam);
+            fn();
+        }
+
+        describe('De eerste describe', function () {
+            console.log('en de functie');
+        });
+
+
+        function it(naam, fn) {
+            try {
+                console.log('voer de test ' + naam + ' uit ');
+                fn();
+            } catch (Error) {
+                console.log('Deze test ging niet goed vanwege ' + Error)
+            }
+        }
+
+
+        describe('De tweede describe', function () {
+            it('De eerste it', function () {
+                console.log('Dit is dan de test');
+            });
+        });
+
+        describe('De derde describe', function () {
+            it('De tweede it, welke waar is!', function () {
+                var vijf = 5;
+
+                assertTrue(vijf === 5);
+            });
+        });
+
+        describe('De vierde describe', function () {
+            it('De derde it, welke niet waar is!', function () {
+                var vijf = 5;
+
+                assertTrue(vijf === 6);
+            });
+        });
+
+
+    </script>
+
+
+</head>
+
+</html>
