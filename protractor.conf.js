@@ -9,7 +9,7 @@ exports.config = {
 
 
   capabilities: {
-    'browserName': 'chrome',
+    'browserName': 'firefox',
     'chromeOptions': {'args': ['--disable-extensions']}
   },
 
